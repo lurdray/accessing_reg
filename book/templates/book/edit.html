@@ -1,0 +1,91 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="content-main">
+
+<div class="card mb-4">
+    <header class="card-header">
+        <h4 class="card-title">Edit Book</h4>
+        <div class="row align-items-center">
+            <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
+                
+            </div>
+        </div>
+    </header>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <section class="content-body p-xl-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3 class="content-title">Edit your book</h3>
+                                <br />
+                                <div class="card card-header row gx-3s">
+                                    <br />
+                                    <div class="col-6s mb-3">
+                                        <label class="form-label">Title</label>
+                                        <input name="title" value="{{ book.title }}" class="form-control" type="text" placeholder="Type here" required/>
+                                    </div>
+                                    <br />
+                                    <div class="col-6s mb-3">
+                                        <label class="form-label">Author</label>
+                                        <input name="author" value="{{ book.author }}" class="form-control" type="text" placeholder="Type here" required/>
+                                    </div>
+                                    <br />
+                                    <div class="col-6s mb-3">
+                                        <label class="form-label">Publication Year</label>
+                                        <input name="year" value="{{ book.year }}" class="form-control" type="text" placeholder="Type here" required/>
+                                    </div>
+                                    <div class="col-6s mb-3">
+                                        <label class="form-label">Your book will be updated in the database when you click the 'save' button</label>
+                                        
+                                    </div>
+                                    <div class="col-6s mb-3">
+                                        <button class="btn btn-primary" type="submit">Save</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- row.// -->
+                        
+                    </form>
+                    
+                    <!-- row.// -->
+                </section>
+            </div>
+
+            
+        </div>
+
+        
+        
+        <!-- table-responsive end// -->
+    </div>
+</div>
+<div class="pagination-area mt-30 mb-50">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-start">
+            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+            <li class="page-item"><a class="page-link" href="#">02</a></li>
+            <li class="page-item"><a class="page-link" href="#">03</a></li>
+            <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+            <li class="page-item"><a class="page-link" href="#">16</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#"><i class="material-icons md-chevron_right"></i></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+</section>
+
+{% endblock %}
